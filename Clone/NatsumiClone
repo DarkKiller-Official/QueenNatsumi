@@ -1,9 +1,16 @@
-FROM fusuf/whatsasena:latest
+FROM debian:latest
 
-RUN git clone https://github.com/CyberDraxo/QueenNatsumi /root/QueenNatsumi
-WORKDIR /root/QueenNatsumi/
-ENV TZ=Europe/Istanbul
+RUN cd /
+
+RUN git clone https://github.com/CyberDraxo/QueenNatsumi
+
+RUN cd QueenNatsumi
+
+WORKDIR /QueenNatsumi
+
 RUN npm install supervisor -g
+
 RUN yarn install --no-audit
 
-CMD ["node", "QueenNatsumi.js"]
+CMD node QueenNatsumi.js
+
