@@ -2,7 +2,7 @@ FROM fusuf/whatsasena:latest
 
 RUN git clone https://CyberDraxo/QueenNatsumi /root/QueenNatsumi
 WORKDIR /root/QueenNatsumi/
-ENV TZ=Europe/Istanbul
+ENV TZ=Asia/Kolkata
 RUN npm install supervisor -g
 RUN yarn install --ignore-engines
 
