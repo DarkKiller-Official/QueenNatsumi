@@ -1,5 +1,3 @@
-# QueenNatsumi
-World 🌎 Best Whatsapp User Bot 🇱🇰🇱🇰🤖
+# Subcribe My Channel and Watch My Video
 
-Queen Natsumi Beta 
-[![Deploy on Railway Test](https://railway.app/button.svg)](https://railway.app/new/template/x8f3BX)
+[![Youtube](https://img.shields.io/badge/Cyber%20Draxo%20YouTube%20Channel-ff0000?style=flat&labelColor=224242&logoColor=white&for-the-badge&logo=youtube)](https://youtube.com/channel/UC-P4xVFvCgqQuUx9PrN2DIA)
