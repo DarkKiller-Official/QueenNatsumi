@@ -3,7 +3,7 @@ Telegram: t.me/CyberDraxo
 Instagram: www.instagram.com/kyrie.baran
 */
 
-const Natsumi = require('../events');
+const Natsumi = require('../control');
 const {MessageType,Mimetype} = require('queen-natsumi-web-api');
 const fs = require('fs');
 const ffmpeg = require('fluent-ffmpeg');
