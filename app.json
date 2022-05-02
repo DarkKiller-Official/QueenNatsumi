@@ -25,7 +25,7 @@
             "description": "බොට්ව සෑදීම සදහා පාස්වර්ඩ් එකක් අවශ්‍ය අතර වීඩියෝව නරඹා එය ලබා ගන්න.password required.. watch the video",
             "required": true    
         },
-        "ANTİ_LİNK": {
+        "ANTI_LINK": {
             "description": "Link Blocking System.ගෲපයට කෙනෙකු ලින්ක් එකක් ඇතුලත් කලහොත් ඔහුව ගෲපයෙන් නෙරපා දමයි",
             "required": true,
             "value": "true"  
