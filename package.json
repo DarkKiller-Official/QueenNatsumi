@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/CyberDraxo/QueenNatsumi#readme",
   "dependencies": {
-    "queen-natsumi-web-api": "3.0.3",
+    "queen-natsumi-web-api": "3.0.6",
     "queen-natsumi-npm": "2.1.2"
   }
 }
