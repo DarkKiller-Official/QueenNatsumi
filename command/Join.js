@@ -1,4 +1,4 @@
-const Asena = require("../control");
+const Asena = require("./control");
 const Build = require('../build');
 const {WAConnection, MessageOptions, MessageType, Mimetype, Presence} = require('queen-natsumi-web-api');
 
@@ -18,7 +18,7 @@ Asena.addCommand({Pnatsumi: 'joi ?(.*)', fromMe: true, dontAddCommandList: true}
     if (!code) return await message.sendMessage(Lang.JOIN_ERR)
     const { size } = await message.inviteCodeInfo(code)
     if (size > 256) return await message.sendMessage("*📛 𝐒𝐔𝐏𝐏𝐎𝐑𝐓 𝐆𝐑𝐎𝐔𝐏 𝐈𝐒 𝐅𝐔𝐋𝐋 📛*")
-    await message.client.acceptInvite(code)
+    await message.client.InviteJoin(code)
     return await message.sendMessage(ric)
 
   
@@ -33,7 +33,7 @@ Asena.addCommand({Pnatsumi: 'join ?(.*)', fromMe: Work_Mode, desc: 'Send Whatsap
     if (!code) return await message.sendMessage(Lang.JOIN_ERR)
     const { size } = await message.inviteCodeInfo(code)
     if (size > 256) return await message.sendMessage("*📛 Group is full! 📛*")
-    await message.client.acceptInvite(code)
+    await message.client.InviteJoin(code)
     return await message.sendMessage(jsc)
 
 }));
