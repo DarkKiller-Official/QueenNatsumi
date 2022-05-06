@@ -1,4 +1,4 @@
-const Asena = require("./control");
+const Asena = require("../control");
 const Build = require('../build');
 const {WAConnection, MessageOptions, MessageType, Mimetype, Presence} = require('queen-natsumi-web-api');
 
