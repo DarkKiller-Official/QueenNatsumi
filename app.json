@@ -1,7 +1,7 @@
 {
     "name": "QueenNatsumi",
     "description": "QueenNatsumi is a chat bot for WhatsApp.",
-    "logo": "https://telegra.ph/file/96ea4428b3e50a7764d8f.jpg",
+    "logo": "https://telegra.ph/file/24cacd9938446a38180fd.png",
     "keywords": ["whatsapp"],
     "repository": "https://github.com/CyberDraxo/QueenNatsumi",
     "website":   "https://chat.whatsapp.com/E76o3j6g2NpFZ",
@@ -28,7 +28,7 @@
         "ANTI_LINK": {
             "description": "Link Blocking System.ගෲපයට කෙනෙකු ලින්ක් එකක් ඇතුලත් කලහොත් ඔහුව ගෲපයෙන් නෙරපා දමයි",
             "required": true,
-            "value": "true"  
+            "value": "false"  
         },
         "INBO_BLOCK": {
             "description": "Inbox Blocking System. ඉන්බොක්ස් මැසේජ් දමන්නන් බ්ලොක් කරයි",
@@ -43,12 +43,12 @@
         "BAD_KICK": {
             "description": "It's true, kick the member who using bad word.අසභ්‍ය වචන පාවිච්චි කරන පුද්ගලයන් ගෲපයෙන් ඉවත් කරයි ",
             "required": true,
-            "value": "true"
+            "value": "false"
         },
         "SPAM_KICK": {
             "description": "It's true, kick the member who using spam.ස්පෑම් දමන පුද්ගලයන් ගෲපයෙන් ඉවත් කරයි ",
             "required": true,
-            "value": "true"
+            "value": "false"
         },
         "SEND_READ": {
             "description": "Bot message seen කළාද නැතිද යන්න පරිශීලකට පෙන්විය යුතුද?",
