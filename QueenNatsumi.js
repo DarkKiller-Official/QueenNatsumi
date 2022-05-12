@@ -189,9 +189,9 @@ ${chalk.blue.italic('🏆 Connecting to WhatsApp...▶')}`);
 // ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ START BUTTON MESSAGE
 
 				const buttons = [
-			        {buttonId: BUTTNHANDLE + 'chek', buttonText: {displayText: '🔱 VERIFY YOUR BOT 💃' }, type: 1},
-			        {buttonId: BUTTNHANDLE + 'QUEENMATSUMI', buttonText: {displayText: '💃 BOT FULL CMD 💃' }, type: 1},
-					{buttonId: BUTTNHANDLE + 'update', buttonText: {displayText: '🚀 BOT UPDATE 🚀' }, type: 1}
+			        {buttonId: BUTTHANDLE + 'chek', buttonText: {displayText: '🔱 VERIFY YOUR BOT 💃' }, type: 1},
+			        {buttonId: BUTTHANDLE + 'QUEENMATSUMI', buttonText: {displayText: '💃 BOT FULL CMD 💃' }, type: 1},
+					{buttonId: BUTTHANDLE + 'update', buttonText: {displayText: '🚀 BOT UPDATE 🚀' }, type: 1}
 			    ]
 			    const buttonMessage = {
 			        image: {url: 'https://telegra.ph/file/96ea4428b3e50a7764d8f.jpg'},    
