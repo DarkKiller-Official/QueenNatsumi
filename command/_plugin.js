@@ -1,9 +1,9 @@
-/* Copyright (C) 2022 CyberDraxo.
+/* Copyright (C) 2022 DarkKiller-Official.
 
 Licensed under the  GPL-3.0 License;
 you may not use this file except in compliance with the License.
 
-QueenNatsumi - CyberDraxo
+QueenNatsumi - DarkKiller-Official
 */
 
 const Natsumi = require('../control');
@@ -100,11 +100,11 @@ Natsumi.addCommand({Pnatsumi: 'install ?(.*)', fromMe: true, desc: Lang.INSTALL_
             fs.unlinkSync('/root/QueenNatsumi/command/' + plugin_name + '.js')
         } 
         else {
-            if (!match[1].includes('CyberDraxo') && DEG.level > 99) {
+            if (!match[1].includes('DarkKiller-Official') && DEG.level > 99) {
                 await message.client.sendMessage(message.jid,LANG.limit + DEG.level + '_', MessageType.text)
                 fs.unlinkSync('/root/QueenNatsumi/command/' + plugin_name + '.js')
             }
-            else if (!match[1].includes('CyberDraxo') && DEG.level < 100) {
+            else if (!match[1].includes('DarkKiller-Official') && DEG.level < 100) {
                 await Db.installPlugin(url, plugin_name)
                 await new Promise(r => setTimeout(r, 400))
                 await message.client.sendMessage(message.jid, Lang.UNOFF, MessageType.text)
@@ -128,7 +128,7 @@ Natsumi.addCommand({Pnatsumi: 'plugin$', fromMe: true, desc: Lang.PLUGIN_DESC}, 
     } else {
         plugins.map(
             (plugin) => {
-                let vf = plugin.dataValues.url.includes('phaticusthiccy') ? msg : unmsg
+                let vf = plugin.dataValues.url.includes('DarkKiller-Official') ? msg : unmsg
                 mesaj += '```' + plugin.dataValues.name + '```: ' + plugin.dataValues.url + '\n' + vf + '\n\n';
             }
         );

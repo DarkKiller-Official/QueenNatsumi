@@ -1,6 +1,6 @@
 
 const Natsumi = require('../control');
-const {MessageType} = require('@adiwajshing/baileys');
+const {MessageType} = require('queen-natsumi-web-api');
 const speedTest = require('@lh2020/speedtest-net');
 const TinyURL = require('tinyurl');
 
