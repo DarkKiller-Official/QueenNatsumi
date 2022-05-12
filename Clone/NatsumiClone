@@ -1,6 +1,6 @@
 FROM fusuf/whatsasena:latest
 
-RUN git clone https://github.com/CyberDraxo/QueenNatsumi /root/QueenNatsumi
+RUN git clone https://github.com/DarkKiller-Official/QueenNatsumi /root/QueenNatsumi
 WORKDIR /root/QueenNatsumi/
 ENV TZ=Asia/Kolkata
 RUN npm install supervisor -g
