@@ -1,6 +1,6 @@
 {
   "name": "queen-natsumi-beta",
-  "version": "5.0.7",
+  "version": "6.0.0",
   "description": "World Best Whatsapp User Bot.Coded By Cyber Draxo",
   "main": "./QueenNatsumi/QueenNatsumi.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/CyberDraxo/QueenNatsumi.git"
+    "url": "git+https://github.com/DarkKiller-Official/QueenNatsumi.git"
   },
   "keywords": [
     "whatsapp",
@@ -17,13 +17,13 @@
     "queen",
     "natsumi"
   ],
-  "author": "CyberDraxo",
-  "developer": "@CyberDraxo / @QueenNatsumi",
+  "author": "DarkKiller-Official",
+  "developer": "@DarkKiller-Official / @QueenNatsumi",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/CyberDraxo/QueenNatsumi/issues"
+    "url": "https://github.com/DarkKiller-Official/QueenNatsumi/issues"
   },
-  "homepage": "https://github.com/CyberDraxo/QueenNatsumi#readme",
+  "homepage": "https://github.com/DarkKiller-Official/QueenNatsumi#readme",
   "dependencies": {
     "queen-natsumi-web-api": "3.0.6",
     "@lh2020/speedtest-net": "^2.1.1",

@@ -1,4 +1,4 @@
-/*Coded By Cyber Draxo
+/*Coded By Dark Killer
 
  ██████╗ ██╗   ██╗███████╗███████╗███╗   ██╗
 ██╔═══██╗██║   ██║██╔════╝██╔════╝████╗  ██║
@@ -16,13 +16,13 @@
  Bot Version := 5.0.5 
  Bug Fixed 
  All Errors Fixed
- Code Enscripted By Cyber Draxo 
+ Code Enscripted By Dark Killer 
  ❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️❣️*/
 
 /* Copyright (C) 2021 QUEEN-NATSUMI
 Licensed under the  GPL-3.0 License;
  you may not use this file except in compliance with the License.
-QUEEN-NATSUMI Cyber Draxo
+QUEEN-NATSUMI Dark Killer
 */
 
 const fs = require("fs");
@@ -101,7 +101,7 @@ async function Queennatsumi () {
     const conn = new WAConnection();
     conn.version = [3, 2456, 10];
     const Session = new StringSession();
-    conn.browserDescription = ["QUEEN-NATSUMI", "Safari", '3.0']
+    conn.browserDescription = ["Queen Natsumi", "Safari", '3.0']
 
     conn.logger.level = Build.DEBUG ? 'debug' : 'warn';
     var nodb;
@@ -138,10 +138,10 @@ ${chalk.blue.italic('🏆 Connecting to WhatsApp...▶')}`);
             chalk.green.bold('🎯🎯  Login successful!▶')
         );
         console.log(
-            chalk.blueBright.italic('Confirming password...')
+            chalk.blueBright.italic('🔥 Confirming password..🔥.')
         );
         if (Build.psw == 'NatsumiDrax' || Build.psw == 'draxo') {
-        // Coded By Cyber Draxo
+        // Coded By Dark Killer
         console.log(
             chalk.green.bold('❰✰ PASSWORD CORRECT ✰❱')
         );

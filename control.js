@@ -1,4 +1,4 @@
-/* Copyright (C) 2020 Cyber Draxo
+/* Copyright (C) 2020 Dark Killer
 Licensed under the  GPL-3.0 License;
 you may ont use this file except in compliance with the License.
 
