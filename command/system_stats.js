@@ -1,82 +1,68 @@
-/* Copyright (C) 2020 Yusuf Usta.
-
-Licensed under the  GPL-3.0 License;
-you may not use this file except in compliance with the License.
-
-WhatsQueenNatsumi - Yusuf Usta
-Developer & Co-Founder - Phaticusthiccy
-*/
-
-const QueenNatsumi = require('../control');
-const {MessageType} = require('queen-natsumi-web-api');
-const {spawnSync} = require('child_process');
+const Natsumi = require('../control');
 const Build = require('../build');
+const {MessageType, MessageOptions, Mimetype} = require('queen-natsumi-web-api');
+const {spawnSync} = require('child_process');
 const chalk = require('chalk');
-const Axios = require('axios');
+const axios = require('axios');
+const fs = require('fs');
+let Work_Mode = Build.WORKTYPE == 'public' ? false : true
 
 const Language = require('../language');
 const Lang = Language.getString('system_stats');
 
+var SYSDTXT = ''
+if (Build.LANG == 'SI') SYSDTXT = '💻 පද්ධති තත්ත්වය'
+if (Build.LANG == 'EN') SYSDTXT = '💻 System status'
 
-if (Build.WORKTYPE == 'private') {
+var VER = ''
+if (Build.LANG == 'SI') VER = '🧬 Version'
+if (Build.LANG == 'EN') VER = '🧬 Version'
 
-    QueenNatsumi.addCommand({Pnatsumi: 'alive', fromMe: true, desc: Lang.ALIVE_DESC}, (async (message, match) => {
+var MSG = ''
+if (Build.ALIVEMSG == 'default') MSG = '```👸 𝗛𝗘𝗬 𝗧𝗛𝗘𝗥𝗘 𝗕𝗢𝗧 𝗢𝗡𝗟𝗜𝗡𝗘 𝗡𝗢𝗪 ❣️``` \n👸 𝗬𝗢𝗨 𝗖𝗔𝗡 𝗨𝗦𝗘 𝗠𝗘 👸\n𝗗𝗘𝗩𝗢𝗟𝗢𝗣𝗘𝗥 :- 𝗖𝗬𝗕𝗘𝗥 𝗗𝗥𝗔𝗫𝗢\n```𝗧𝗛𝗔𝗡𝗞𝗦 𝗙𝗢𝗥 𝗨𝗦𝗜𝗡𝗚 𝗤𝗨𝗘𝗘𝗡 𝗡𝗔𝗧𝗦𝗨𝗠𝗜 𝗕𝗢𝗧 💞```'
+else MSG = Build.ALIVEMSG
 
-        if (Build.ALIVEMSG == 'default') {
-            await message.client.sendMessage(message.jid,'╭──────────◅\n│\n│🎧ʜᴇʟʟᴏ ᴜꜱᴇʀ\n│╭──────────────╮\n│ 👸🏻Ｉ ＡＭ A L I V E  👸\n│╰──────────────╯\n│\n├►ɪ ᴀᴍ ɴᴀᴛsᴜᴍɪ ʙᴏᴛ\n│\n│▻ᴠᴇʀꜱɪᴏɴ - ᴡɪᴛʜᴏᴜᴛ ʙᴜᴛᴛᴏɴꜱ\n│\n├▻ᴅᴇᴠᴇʟᴏᴘᴇʀ - ᴄʏʙᴇʀᴅʀᴀxᴏ\n│\n├▻ᴍᴇɴᴜ ᴄᴏᴍᴍᴀɴᴅ - .Natsumi\n│\n│💞ᴛʜᴀɴᴋ ʏᴏᴜ ꜰᴏʀ ᴜꜱɪɴɢ ᴍᴇ👸\n│\n╰────────────▻\nـــ٨ـہہـ♡ـ٨ـہـ' , MessageType.text);
-        }
-        else {
-            const pow = '*Powered by Natsumi*'
-            const payload = Build.ALIVEMSG
-            const status = await message.client.getStatus()
-            const ppUrl = await message.client.getProfilePicture() 
-            const resim = await Axios.get(ppUrl, {responseType: 'arraybuffer'})
 
-            if (!payload.includes('{pp}')) {
-                await message.client.sendMessage(message.jid,payload.replace('{version}', Build.VERSION).replace('{info}', `${status.status}`).replace('{plugin}', Build.CHANNEL) + '\n' + pow, MessageType.text);
-            }
-            else if (payload.includes('{pp}')) {
-                await message.sendMessage(Buffer(resim.data), MessageType.image, { caption: payload.replace('{version}', Build.VERSION).replace('{pp}', '').replace('{info}', `${status.status}`).replace('{plugin}', Build.CHANNEL) + '\n' + pow });
-            }
-        }
-    }));
+Natsumi.addCommand({Pnatsumi: 'alive', fromMe: Work_Mode, desc: Lang.ALIVE_DESC,  deleteCommand: false}, (async (message, match) => {
+    var logo = await axios.get (Build.ALIVE_LOGO, {responseType: 'arraybuffer'})
+    var PIC = Buffer.from(logo.data)
 
-    QueenNatsumi.addCommand({Pnatsumi: 'sysd', fromMe: true, desc: Lang.SYSD_DESC}, (async (message, match) => {
+    const media = await message.client.prepareMessage(message.jid, PIC, MessageType.image, { thumbnail: PIC })
 
-        const child = spawnSync('neofetch', ['--stdout']).stdout.toString('utf-8')
-        await message.sendMessage(
-            '```' + child + '```', MessageType.text
-        );
-    }));
-}
-else if (Build.WORKTYPE == 'public') {
+    var BUTTHANDLE = '';
+    if (/\[(\W*)\]/.test(Build.HANDLERS)) {
+        BUTTHANDLE = Build.HANDLERS.match(/\[(\W*)\]/)[1][0];
+    } else {
+        BUTTHANDLE = '.';
+    }
+        
+    const buttons = [
+        {buttonId: BUTTHANDLE + 'qnversion', buttonText: {displayText: VER }, type: 1},
+        {buttonId: BUTTHANDLE + 'qnsysstats', buttonText: {displayText: SYSDTXT }, type: 1}
+    ]
+    const buttonMessage = {
+        contentText: MSG,
+        footerText: 'ᴾᴼᵂᴱᴿᴰ ᴮʸ © Qᵁᴱᴱᴺ ᴺᴬᵀˢᵁᴹᴵ ᴮᴼᵀ ©',
+        buttons: buttons,
+        headerType: 4,
+        imageMessage: media.message.imageMessage    
+    }
+    await message.client.sendMessage(message.jid, buttonMessage, MessageType.buttonsMessage);
+}))
 
-    QueenNatsumi.addCommand({Pnatsumi: 'alive', fromMe: false, desc: Lang.ALIVE_DESC}, (async (message, match) => {
+Natsumi.addCommand({Pnatsumi: 'qnsysstats', fromMe: Work_Mode, desc: Lang.SYSD_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+    const child = spawnSync('neofetch', ['--stdout']).stdout.toString('utf-8')
+    await message.sendMessage(
+        '```' + child + '```', MessageType.text, {quoted: message.data}
+    );
+}));
 
-        if (Build.ALIVEMSG == 'default') {
-            await message.client.sendMessage(message.jid,'╭──────────◅\n│\n│🎧ʜᴇʟʟᴏ ᴜꜱᴇʀ\n│╭──────────────╮\n│ 👸🏻Ｉ ＡＭ A L I V E  👸\n│╰──────────────╯\n│\n├►ɪ ᴀᴍ ɴᴀᴛsᴜᴍɪ ʙᴏᴛ\n│\n│▻ᴠᴇʀꜱɪᴏɴ - ᴡɪᴛʜᴏᴜᴛ ʙᴜᴛᴛᴏɴꜱ\n│\n├▻ᴅᴇᴠᴇʟᴏᴘᴇʀ - ᴄʏʙᴇʀᴅʀᴀxᴏ\n│\n├▻ᴍᴇɴᴜ ᴄᴏᴍᴍᴀɴᴅ - .ɴᴀᴛsᴜᴍɪ\n│\n│💞ᴛʜᴀɴᴋ ʏᴏᴜ ꜰᴏʀ ᴜꜱɪɴɢ ᴍᴇ👸\n│\n╰────────────▻\nـــ٨ـہہـ♡ـ٨ـہـ', MessageType.text);
-        }
-        else {
-            const pow = '*Powered by Natsumi*'
-            const payload = Build.ALIVEMSG
-            const status = await message.client.getStatus()
-            const ppUrl = await message.client.getProfilePicture() 
-            const resim = await Axios.get(ppUrl, {responseType: 'arraybuffer'})
-
-            if (!payload.includes('{pp}')) {
-                await message.client.sendMessage(message.jid,payload.replace('{version}', Build.VERSION).replace('{info}', `${status.status}`).replace('{plugin}', Build.CHANNEL) + '\n' + pow, MessageType.text);
-            }
-            else if (payload.includes('{pp}')) {
-                await message.sendMessage(Buffer(resim.data), MessageType.image, { caption: payload.replace('{version}', Build.VERSION).replace('{pp}', '').replace('{info}', `${status.status}`).replace('{plugin}', Build.CHANNEL) + '\n' + pow });
-            }
-        }
-    }));
-
-    QueenNatsumi.addCommand({Pnatsumi: 'sysd', fromMe: false, desc: Lang.SYSD_DESC}, (async (message, match) => {
-
-        const child = spawnSync('neofetch', ['--stdout']).stdout.toString('utf-8')
-        await message.sendMessage(
-            '```' + child + '```', MessageType.text
-        );
-    }));
-}
+Natsumi.addCommand({Pnatsumi: 'qnversion', fromMe: Work_Mode, desc: Lang.SYSD_DESC, dontAddCommandList: true,  deleteCommand: false}, (async (message, match) => {
+    await message.client.sendMessage(message.jid, 
+        `*🧬 Queen Natsumi Version 🧬*\n\n` + 
+        '```Installed version :```\n' +
+        Lang.version + 
+        `\n\nCheck official website : https://github.com/CyberDraxo/QueenNatsumi`
+   , MessageType.text, {quoted: message.data});
+    
+}));
