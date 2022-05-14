@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/DarkKiller-Official/QueenNatsumi#readme",
   "dependencies": {
-    "queen-natsumi-web-api": "3.0.6",
+    "queen-natsumi-web-api": "3.0.5",
     "@lh2020/speedtest-net": "^2.1.1",
     "browser-id3-writer": "^4.4.0",
 		"playstore-scraper": "^1.0.0",
