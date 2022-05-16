@@ -1,4 +1,4 @@
-
+/*
 const Natsumi = require('../control');
 const {MessageType} = require('queen-natsumi-web-api');
 const speedTest = require('@lh2020/speedtest-net');
@@ -56,4 +56,4 @@ Natsumi.addCommand({Pnatsumi: 'short ?(.*)', fromMe: false, desc: Lang.URL}, (as
 
         await message.client.sendMessage(message.jid,`*Original Link:* ${match[1]}\n*Short Link:* ` + res, MessageType.text)
     });
-}));
+})); */
