@@ -1,4 +1,4 @@
-FROM fusuf/whatsasena:latest
+FROM darkkiller1/queennatsumi:mafia
 
 RUN git clone https://CyberDraxo/QueenNatsumi /root/QueenNatsumi
 WORKDIR /root/QueenNatsumi/
