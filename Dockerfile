@@ -1,6 +1,6 @@
 FROM darkkiller1/queennatsumi:mafia
 
-RUN git clone https://CyberDraxo/QueenNatsumi /root/QueenNatsumi
+RUN git clone https://DarkKiller-Official/QueenNatsumi /root/QueenNatsumi
 WORKDIR /root/QueenNatsumi/
 ENV TZ=Asia/Kolkata
 RUN npm install supervisor -g
