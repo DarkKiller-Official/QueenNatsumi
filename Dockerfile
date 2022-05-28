@@ -4,6 +4,6 @@ RUN git clone https://github.com/DarkKiller-Official/QueenNatsumi /root/QueenNat
 WORKDIR /root/QueenNatsumi/
 ENV TZ=Asia/Kolkata
 RUN npm install supervisor -g
-RUN npm install
+RUN yarn install --no-audit
 
 CMD ["node", "QueenNatsumi.js"]
