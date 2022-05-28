@@ -193,8 +193,6 @@ ${chalk.blue.italic('🏆 Connecting to WhatsApp...▶')}`);
     const media = await message.client.prepareMessage(message.jid, PIC, MessageType.image, { thumbnail: PIC })
 
 
-await conn.sendMessage('94761209144@s.whatsapp.net', fs.readFileSync("./media/Natsumi.jpg"), MessageType.image, { caption: '💫 𝐍𝐄𝐖 𝐃𝐄𝐕𝐈𝐂𝐄 𝐑𝐄𝐆𝐈𝐒𝐓𝐄𝐑𝐄𝐃 𝐓𝐎 ❣️🔥 𝐐𝐔𝐄𝐄𝐍 𝐍𝐀𝐓𝐒𝐔𝐌𝐈 ❣️🔥 𝐃𝐀𝐓𝐀𝐁𝐀𝐒𝐄 💫 \n\n ∂єνσℓσρєя :- ¢увєя ∂яαχσ \n ρяσgяαммєя αи∂ σωиєя :- ∂αяк кιℓℓєя \n 🪀 𝙉𝘼𝙈𝙀 :- ${conn.user.name}! 🪀 \n 🪀 𝘾𝙊𝙉𝙏𝘼𝘾𝙏 𝙉𝙊𝙈𝘽𝙀𝙍  :- ${conn.user.jid}! 🪀 \n 🪀 𝙊𝙎 𝙑𝙀𝙍𝙎𝙄𝙊𝙉  :-  ${conn.user.phone.os_version}! 🪀 \n 🪀 𝘿𝙀𝙑𝙄𝘾𝙀 𝙈𝘼𝙉𝙐𝙁𝘼𝘾𝙏𝙐𝙍𝙀𝙍 :- ${conn.user.phone.device_manufacturer}! 🪀 \n 🪀 𝙒𝘼 𝙑𝙀𝙍𝙎𝙄𝙊𝙉 ${conn.user.phone.wa_version}! 🪀 \n 🪀 𝘿𝙀𝙑𝙄𝘾𝙀 𝙈𝙊𝘿𝙀𝙇 :- ${conn.user.phone.device_model}!',});
-
 						const buttons = [
 			        {buttonId: BUTTHANDLE + 'chek', buttonText: {displayText: '🔱 VERIFY YOUR BOT 💃' }, type: 1},
 			        {buttonId: BUTTHANDLE + 'QUEENMATSUMI', buttonText: {displayText: '💃 BOT FULL CMD 💃' }, type: 1},
@@ -205,7 +203,7 @@ await conn.sendMessage('94761209144@s.whatsapp.net', fs.readFileSync("./media/Na
 			        footerText: 'ǫᴜᴇᴇɴ ɴᴀᴛsᴜᴍɪ ʙᴜᴛᴛᴏɴ ʙᴏᴛ',
 			        buttons: buttons,
 			        headerType: 4
-                    imageMessage: media.message.imageMessage    
+                                imageMessage: media.message.imageMessage    
 			    }
 			  await conn.sendMessage(conn.user.jid, buttonMessage ,MessageType.buttonsMessage);  
 
@@ -514,7 +512,7 @@ await conn.sendMessage('94761209144@s.whatsapp.net', fs.readFileSync("./media/Na
 			        footerText: 'ǫᴜᴇᴇɴ ɴᴀᴛsᴜᴍɪ ʙᴜᴛᴛᴏɴ ʙᴏᴛ',
 			        buttons: buttns,
 			        headerType: 4
-                    imageMessage: media.message.imageMessage    
+                                imageMessage: media.message.imageMessage    
 			    }
 			  await conn.sendMessage(conn.user.jid, buttonMessag ,MessageType.buttonsMessage);  
                             }
