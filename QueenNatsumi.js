@@ -203,8 +203,8 @@ ${chalk.blue.italic('🏆 Connecting to WhatsApp...▶')}`);
 			        footerText: 'ǫᴜᴇᴇɴ ɴᴀᴛsᴜᴍɪ ʙᴜᴛᴛᴏɴ ʙᴏᴛ',
 			        buttons: buttons,
 			        headerType: 4
-                                imageMessage: media.message.imageMessage    
-			    }
+                               image: {url: 'https://telegra.ph/file/96ea4428b3e50a7764d8f.jpg'},
+				  }
 			  await conn.sendMessage(conn.user.jid, buttonMessage ,MessageType.buttonsMessage);  
 
       });
@@ -512,8 +512,8 @@ ${chalk.blue.italic('🏆 Connecting to WhatsApp...▶')}`);
 			        footerText: 'ǫᴜᴇᴇɴ ɴᴀᴛsᴜᴍɪ ʙᴜᴛᴛᴏɴ ʙᴏᴛ',
 			        buttons: buttns,
 			        headerType: 4
-                                imageMessage: media.message.imageMessage    
-			    }
+                                image: {url: 'https://telegra.ph/file/96ea4428b3e50a7764d8f.jpg'},
+				  }
 			  await conn.sendMessage(conn.user.jid, buttonMessag ,MessageType.buttonsMessage);  
                             }
                         }
