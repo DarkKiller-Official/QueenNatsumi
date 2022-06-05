@@ -202,9 +202,8 @@ ${chalk.blue.italic('🏆 Connecting to WhatsApp...▶')}`);
 			        contentText: BTNMSG,
 			        footerText: 'ǫᴜᴇᴇɴ ɴᴀᴛsᴜᴍɪ ʙᴜᴛᴛᴏɴ ʙᴏᴛ',
 			        buttons: buttons,
-			        headerType: 4
-                               image: {url: 'https://telegra.ph/file/96ea4428b3e50a7764d8f.jpg'}
-				  }
+			        headerType: 1
+                               }
 			  await conn.sendMessage(conn.user.jid, buttonMessage ,MessageType.buttonsMessage);  
 
       });
@@ -511,9 +510,8 @@ ${chalk.blue.italic('🏆 Connecting to WhatsApp...▶')}`);
 			        contentText: '*🎯💃 𝐐𝐔𝐄𝐄𝐍 𝐍𝐀𝐓𝐒𝐔𝐌𝐈 𝐁𝐎𝐓 🪀*  WORKING AS +Build.WORKTYPE+ !!\n\nYOUR NAME ▷${conn.user.name}! /n/n ⦁_This is your LOG number Dont Try Command here_\n▷Also You Can join Our Support group More Help.\n\n*Error:* ```' + error + '```\n\n',
 			        footerText: 'ǫᴜᴇᴇɴ ɴᴀᴛsᴜᴍɪ ʙᴜᴛᴛᴏɴ ʙᴏᴛ',
 			        buttons: buttns,
-			        headerType: 4
-                                image: {url: 'https://telegra.ph/file/96ea4428b3e50a7764d8f.jpg'}
-				  }
+			        headerType: 1
+                                }
 			  await conn.sendMessage(conn.user.jid, buttonMessag ,MessageType.buttonsMessage);  
                             }
                         }
