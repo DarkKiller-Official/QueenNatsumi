@@ -1,162 +1,195 @@
 {
-    "name": "QueenNatsumi",
-    "description": "QueenNatsumi is a chat bot for WhatsApp.",
-    "logo": "https://telegra.ph/file/337ce45719464467f0ffc.jpg",
-    "keywords": ["whatsapp"],
-    "repository": "https://github.com/DarkKiller-Official/QueenNatsumi",
-    "website":   "https://chat.whatsapp.com/E76o3j6g2NpFZ",
-    "success_url": "https://chat.whatsapp.com/Hm79J2saLrvRTkq",
-    "stack": "container",
-    "env": {
-        "QUEEN_NATSUMI_SESSION": {
-            "description": "Qr කේතය scan කළ පසුව ලැබෙන කේතයන්",
-            "required": true
-        },
-        "SUDO": {
-            "description": "ඔබ එය භාවිතා කරන්නේ කෙසේදැයි නොදන්නේ නම් හිස්ව තබන්න! සුඩෝ මාදිලිය; ඔබගේ අංකය ජාත්‍යන්තර අංකයක් විය යුතුය. එබැවින් රටේ කේතයෙන් පසුව ඔබේ අංකය තිබිය යුතුය. උදාහරණය: 947xxxxxxxx (Sri lanka අංකය 94)",
-            "required": false
-        },
-        "LANGUAGE": {
-            "description": "Bot භාෂාව සිංහල භාෂාව සඳහා SI ලෙස සඳහන් කරන්න. ENGLISH භාශාව සදහා EN යොදන්න",
-            "required": true,
-            "value": "EN"
-        },
-          "QN_PASSWORD": {
-            "description": "බොට්ව සෑදීම සදහා පාස්වර්ඩ් එකක් අවශ්‍ය අතර වීඩියෝව නරඹා එය ලබා ගන්න.password required.. watch the video",
-            "required": true    
-        },
-        "ANTI_LINK": {
-            "description": "Link Blocking System.ගෲපයට කෙනෙකු ලින්ක් එකක් ඇතුලත් කලහොත් ඔහුව ගෲපයෙන් නෙරපා දමයි",
-            "required": true,
-            "value": "false"  
-        },
-        "INBO_BLOCK": {
-            "description": "Inbox Blocking System. ඉන්බොක්ස් මැසේජ් දමන්නන් බ්ලොක් කරයි",
-            "required": true,
-            "value": "false"
-        },
-        "HANDLERS": {
-            "description": "Bot ගේ ක්‍රියාකාරිත්වය සඳහා යෙදිය යුතු සලකුනු",
-            "required": true,
-            "value": "^[.]"
-        },
-        "BAD_KICK": {
-            "description": "It's true, kick the member who using bad word.අසභ්‍ය වචන පාවිච්චි කරන පුද්ගලයන් ගෲපයෙන් ඉවත් කරයි ",
-            "required": true,
-            "value": "false"
-        },
-        "SPAM_KICK": {
-            "description": "It's true, kick the member who using spam.ස්පෑම් දමන පුද්ගලයන් ගෲපයෙන් ඉවත් කරයි ",
-            "required": true,
-            "value": "false"
-        },
-        "SEND_READ": {
-            "description": "Bot message seen කළාද නැතිද යන්න පරිශීලකට පෙන්විය යුතුද?",
-            "required": true,
-            "value": "false"
-        },
-        "HEROKU": {
-            "description": "Heroku",
-            "required": true,
-            "value": "true"
-        },
-        "HEROKU_API_KEY": {
-            "description": "Heroku Api Key.",
-            "required": true
-        },
-        "HEROKU_APP_NAME": {
-            "description": "Heroku App name.",
-            "required": true
-        },
-        "MUTE_MESSAGE": {
-            "description": "mute msg",
-            "required": false,
-            "value": "default"
-        },
-        "BLOCK_CHAT": {
-            "description": "බොට් වැඩ නොකරන චැට් එක තෝරන්න. Ex: 947xxxxxxxx && 947xxxxxxxx හෝ 947xxxxxxxx,947xxxxxxxx",
-            "required": false,
-            "value": "default"
-        },
-        "UNMUTE_MESSAGE": {
-            "description": "Group එකක් unmute කිරිමෙදි ලැබෙන පනිවිඩය.",
-            "required": false,
-            "value": "default"
-        },
-        "BLOCK_MESSAGE": {
-            "description": "වෙනස් කළ හැකි චැට් block දැනුම්දීම. ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
-            "required": false,
-            "value": "default"
-        },
-        "UNBLOCK_MESSAGE": {
-            "description": "වෙනස් කළ හැකි චැට් unblock දැනුම්දීම. ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
-            "required": false,
-            "value": "default"
-        },
-        "WORK_TYPE": {
-            "description": "Bot වැඩ කරන ක්රමය. ඔබ “public” භාවිතා කරන්නේ නම්, සෑම කෙනෙකුටම bot භාවිතා කළ හැකිය. ඔබ “private” භාවිතා කරන්නේ නම්, ඔබේ bot භාවිතා කළ හැක්කේ ඔබට පමණි.",
-            "required": true,
-            "value": "private"
-        },       
-        "DEBUG": {
-            "description": "ඔබ මෙය නොදන්නේ නම්. එය අත්හරින්න.",
-            "required": true,
-            "value": "false"
-        },
-        "REMOVE_BG_API_KEY": {
-            "description": "මෙහිදි ඔබ remove.bg යන website එකට පිවිස signup වී, API key එකක් ලබාගන්න. එම API key එක මෙම හිස්තැනේ දමන්න.",
-            "required": false
-        },
-        "ALIVE_MESSAGE": {
-            "description": "Bot online ද නැද්ද යන්න පරීක්ෂා කරන විට ලැබෙන මැසේජ් එක. මෙය වෙනස් කිරිමට අත්‍යාවශ්‍යම නොවේ.",
-            "required": false,
-            "value": "default"
-        },
-        "BAN_MESSAGE": {
-            "description": "යම් කෙනෙකු ඔබ .ban ලෙස කොමාන්ඩ් කර remove කලවිට ලැබෙන message එක. ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
-            "required": false,
-            "value": "default"
-        },
-        "ADD_MESSAGE": {
-            "description": "ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
-            "required": false,
-            "value": "default"
-        },
-        "KICKME_MESSAGE": {
-            "description": "ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
-            "required": false,
-            "value": "default"
-        },
-        "PROMOTE_MESSAGE": {
-            "description": "ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
-            "required": false,
-            "value": "default"
-        },
-        "DEMOTE_MESSAGE": {
-            "description": "ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
-            "required": false,
-            "value": "default"
-        },
-        "AFK_MESSAGE": {
-            "description": "ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
-            "required": false,
-            "value": "default"
-        },
-        "NO_ONLINE": {
-            "description": "මෙය වෙනස් කිරිමට අත්‍යාවශ්‍යම නොවේ.",
-            "required": false,
-            "value": "true"
-        },
-        "COFFEEHOUSE_API_KEY": {
-            "description": "එය අත්හරින්න. අපි ඔබට මෙය ලබා දෙනවා.",
-            "required": false,
-            "value": "true"
-        }
-    },
-    "addons": [{
-      "plan": "heroku-postgresql"
-    }],
-    "buildpacks": [{
-      "url": "heroku-community/apt"
-      }]
-  }
+	"name": "QueenNatsumi",
+	"description": "QueenNatsumi is a chat bot for WhatsApp.",
+	"logo": "https://telegra.ph/file/337ce45719464467f0ffc.jpg",
+	"keywords": ["whatsapp"],
+	"repository": "https://github.com/DarkKiller-Official/QueenNatsumi",
+	"website": "https://chat.whatsapp.com/E76o3j6g2NpFZ",
+	"success_url": "https://chat.whatsapp.com/Hm79J2saLrvRTkq",
+	"stack": "container",
+	"env":
+	{
+		"QUEEN_NATSUMI_SESSION":
+		{
+			"description": "Qr කේතය scan කළ පසුව ලැබෙන කේතයන්",
+			"required": true
+		},
+		"SUDO":
+		{
+			"description": "ඔබ එය භාවිතා කරන්නේ කෙසේදැයි නොදන්නේ නම් හිස්ව තබන්න! සුඩෝ මාදිලිය; ඔබගේ අංකය ජාත්‍යන්තර අංකයක් විය යුතුය. එබැවින් රටේ කේතයෙන් පසුව ඔබේ අංකය තිබිය යුතුය. උදාහරණය: 947xxxxxxxx (Sri lanka අංකය 94)",
+			"required": false
+		},
+		"LANGUAGE":
+		{
+			"description": "Bot භාෂාව සිංහල භාෂාව සඳහා SI ලෙස සඳහන් කරන්න. ENGLISH භාශාව සදහා EN යොදන්න",
+			"required": true,
+			"value": "EN"
+		},
+		"QN_PASSWORD":
+		{
+			"description": "බොට්ව සෑදීම සදහා පාස්වර්ඩ් එකක් අවශ්‍ය අතර වීඩියෝව නරඹා එය ලබා ගන්න.password required.. watch the video",
+			"required": true
+		},
+		"ANTI_LINK":
+		{
+			"description": "Link Blocking System.ගෲපයට කෙනෙකු ලින්ක් එකක් ඇතුලත් කලහොත් ඔහුව ගෲපයෙන් නෙරපා දමයි",
+			"required": true,
+			"value": "false"
+		},
+		"INBO_BLOCK":
+		{
+			"description": "Inbox Blocking System. ඉන්බොක්ස් මැසේජ් දමන්නන් බ්ලොක් කරයි",
+			"required": true,
+			"value": "false"
+		},
+		"HANDLERS":
+		{
+			"description": "Bot ගේ ක්‍රියාකාරිත්වය සඳහා යෙදිය යුතු සලකුනු",
+			"required": true,
+			"value": "^[.]"
+		},
+		"BAD_KICK":
+		{
+			"description": "It's true, kick the member who using bad word.අසභ්‍ය වචන පාවිච්චි කරන පුද්ගලයන් ගෲපයෙන් ඉවත් කරයි ",
+			"required": true,
+			"value": "false"
+		},
+		"SPAM_KICK":
+		{
+			"description": "It's true, kick the member who using spam.ස්පෑම් දමන පුද්ගලයන් ගෲපයෙන් ඉවත් කරයි ",
+			"required": true,
+			"value": "false"
+		},
+		"SEND_READ":
+		{
+			"description": "Bot message seen කළාද නැතිද යන්න පරිශීලකට පෙන්විය යුතුද?",
+			"required": true,
+			"value": "false"
+		},
+		"HEROKU":
+		{
+			"description": "Heroku",
+			"required": true,
+			"value": "true"
+		},
+		"HEROKU_API_KEY":
+		{
+			"description": "Heroku Api Key.",
+			"required": true
+		},
+		"HEROKU_APP_NAME":
+		{
+			"description": "Heroku App name.",
+			"required": true
+		},
+		"MUTE_MESSAGE":
+		{
+			"description": "mute msg",
+			"required": false,
+			"value": "default"
+		},
+		"BLOCK_CHAT":
+		{
+			"description": "බොට් වැඩ නොකරන චැට් එක තෝරන්න. Ex: 947xxxxxxxx && 947xxxxxxxx හෝ 947xxxxxxxx,947xxxxxxxx",
+			"required": false,
+			"value": "default"
+		},
+		"UNMUTE_MESSAGE":
+		{
+			"description": "Group එකක් unmute කිරිමෙදි ලැබෙන පනිවිඩය.",
+			"required": false,
+			"value": "default"
+		},
+		"BLOCK_MESSAGE":
+		{
+			"description": "වෙනස් කළ හැකි චැට් block දැනුම්දීම. ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
+			"required": false,
+			"value": "default"
+		},
+		"UNBLOCK_MESSAGE":
+		{
+			"description": "වෙනස් කළ හැකි චැට් unblock දැනුම්දීම. ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
+			"required": false,
+			"value": "default"
+		},
+		"WORK_TYPE":
+		{
+			"description": "Bot වැඩ කරන ක්රමය. ඔබ “public” භාවිතා කරන්නේ නම්, සෑම කෙනෙකුටම bot භාවිතා කළ හැකිය. ඔබ “private” භාවිතා කරන්නේ නම්, ඔබේ bot භාවිතා කළ හැක්කේ ඔබට පමණි.",
+			"required": true,
+			"value": "private"
+		},
+		"DEBUG":
+		{
+			"description": "ඔබ මෙය නොදන්නේ නම්. එය අත්හරින්න.",
+			"required": true,
+			"value": "false"
+		},
+		"REMOVE_BG_API_KEY":
+		{
+			"description": "මෙහිදි ඔබ remove.bg යන website එකට පිවිස signup වී, API key එකක් ලබාගන්න. එම API key එක මෙම හිස්තැනේ දමන්න.",
+			"required": false
+		},
+		"ALIVE_MESSAGE":
+		{
+			"description": "Bot online ද නැද්ද යන්න පරීක්ෂා කරන විට ලැබෙන මැසේජ් එක. මෙය වෙනස් කිරිමට අත්‍යාවශ්‍යම නොවේ.",
+			"required": false,
+			"value": "default"
+		},
+		"BAN_MESSAGE":
+		{
+			"description": "යම් කෙනෙකු ඔබ .ban ලෙස කොමාන්ඩ් කර remove කලවිට ලැබෙන message එක. ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
+			"required": false,
+			"value": "default"
+		},
+		"ADD_MESSAGE":
+		{
+			"description": "ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
+			"required": false,
+			"value": "default"
+		},
+		"KICKME_MESSAGE":
+		{
+			"description": "ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
+			"required": false,
+			"value": "default"
+		},
+		"PROMOTE_MESSAGE":
+		{
+			"description": "ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
+			"required": false,
+			"value": "default"
+		},
+		"DEMOTE_MESSAGE":
+		{
+			"description": "ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
+			"required": false,
+			"value": "default"
+		},
+		"AFK_MESSAGE":
+		{
+			"description": "ඔබට මෙම පණිවිඩය වෙනස් කිරීමට අවශ්‍ය නැතිනම් default ටයිප් කරන්න.",
+			"required": false,
+			"value": "default"
+		},
+		"NO_ONLINE":
+		{
+			"description": "මෙය වෙනස් කිරිමට අත්‍යාවශ්‍යම නොවේ.",
+			"required": false,
+			"value": "true"
+		},
+		"COFFEEHOUSE_API_KEY":
+		{
+			"description": "එය අත්හරින්න. අපි ඔබට මෙය ලබා දෙනවා.",
+			"required": false,
+			"value": "true"
+		}
+	},
+	"addons": [
+	{
+		"plan": "heroku-postgresql"
+	}],
+	"buildpacks": [
+	{
+		"url": "heroku-community/apt"
+	}]
+}
